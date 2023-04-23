@@ -1,1 +1,25 @@
-<p>chat works!</p>
+<div id="bg">
+    <div class="row justify-content-center" id="icons">
+        <div class="col-md-6"><img
+                src="https://as2.ftcdn.net/v2/jpg/01/88/27/55/1000_F_188275566_ogTIuYum13zOvTMTIHycUIjagUmj5TNj.jpg">
+        </div>
+        <!-- <div class="col-md-6">Hi, I'm a duck</div> -->
+        <div class="col-md-6">
+            <div id="output">
+                <p>{{output}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center" id="choose_fav">
+        <p class="col-md-7">What is your favorite:</p>
+        <div class="col-md-5">
+            <ul class="options">
+                <li *ngFor="let option of options">
+                    <button [class.selected]="option === selectedOption" type="button" (click)="onSelect(option)">
+                        <span class="name">{{option}}</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

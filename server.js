@@ -154,61 +154,62 @@ app.get('/ask', async (req, res) => {
 
 // })
 
-// app.get('/ask', async (req, res) => {
-//     input = req.query.input;
-//     input = "hi, what is your favorite color?"
-//     console.log("input:", input);
-//     try {
+app.get('/ask-one', async (req, res) => {
+
+    tell_kids = "Imagine you are communicating with an elementary school kid from an authorative perspective. If asked, let them know you are AI. Make the child feel very comfortable, and add humor to make the conversation exciting, have fun! In less than 4 sentences. In 10 words including onomatopoeia.";
+    // input = "hi, what is your favorite color?"
+    try {
+        const configuration = new Configuration({
+            apiKey: APIKEY,
+        });
+        const openai = new OpenAIApi(configuration);
+        const input = req.query.input;
+
+        console.log("backend received input:", input);
+
+        const completion = await openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: input }],
+        });
+        const response = completion.data.choices[0].message.content
+        console.log("here are the outputs:", response);
+        res.json(response)
 
 
-//         const configuration = new Configuration({
-//             apiKey: APIKEY,
-//         });
-//         const openai = new OpenAIApi(configuration);
 
-//         const completion = await openai.createChatCompletion({
-//             model: "gpt-3.5-turbo",
-//             messages: [{ role: "user", content: input }],
-//         });
-//         response = completion.data.choices[0].message
-//         console.log(response);
-//         res.send(response.content)
+        // const callOptions = {
+        //     method: 'GET',
+        //     url: 'https://api.openai.com/v1/chat/completions',
+        //     headers: {
+        //         'Authorization': 'Bearer ' + APIKEY,
+        //         'Content-Type': 'application/json'
+        //     },
+        //     data: '{' +
+        //         '"model": "gpt-3.5-turbo",' +
+        //         '"messages": [{"role": "user", "content": "' + input + '"}]' +
+        //         '}'
+        // };
+        // const response = await axios(callOptions);
+        // let data = response.data;
+        // console.log("Here is data")
+        // console.log(data)
+        // output = data
+        // // let events = [];
+        // // if (data_events.length > 0) {
+        // if (output) {
 
+        //     // console.log("al events:", events);
+        //     res.send(output);
+        // } else {
+        //     res.send([])
+        // }
+    } catch (error) {
+        console.log('error:', error);
+        res.send("");
 
+    }
 
-//         // const callOptions = {
-//         //     method: 'GET',
-//         //     url: 'https://api.openai.com/v1/chat/completions',
-//         //     headers: {
-//         //         'Authorization': 'Bearer ' + APIKEY,
-//         //         'Content-Type': 'application/json'
-//         //     },
-//         //     data: '{' +
-//         //         '"model": "gpt-3.5-turbo",' +
-//         //         '"messages": [{"role": "user", "content": "' + input + '"}]' +
-//         //         '}'
-//         // };
-//         // const response = await axios(callOptions);
-//         // let data = response.data;
-//         // console.log("Here is data")
-//         // console.log(data)
-//         // output = data
-//         // // let events = [];
-//         // // if (data_events.length > 0) {
-//         // if (output) {
-
-//         //     // console.log("al events:", events);
-//         //     res.send(output);
-//         // } else {
-//         //     res.send([])
-//         // }
-//     } catch (error) {
-//         console.log('error:', error);
-//         res.send([]);
-
-//     }
-
-// })
+})
 
 
 // const { Configuration, OpenAIApi } = require("openai");

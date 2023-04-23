@@ -13,6 +13,7 @@ import { PlayingComponent } from './playing/playing.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
 import { GameComponent } from './game/game.component';
+import { BigAnswerComponent } from './big-answer/big-answer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GameComponent } from './game/game.component';
     AiComponent,
     PlayingComponent,
     ChatComponent,
-    GameComponent
+    GameComponent,
+    BigAnswerComponent
   ],
   imports: [
     BrowserModule,
