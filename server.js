@@ -4,7 +4,7 @@ const app = express();
 const axios = require('axios');
 const { Configuration, OpenAIApi } = require("openai");
 
-const APIKEY = "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"
+const config = require("./config");
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -42,7 +42,7 @@ app.get('/ask', async (req, res) => {
 
 
         const configuration = new Configuration({
-            apiKey: APIKEY,
+            apiKey: config.APIKEY,
         });
         const openai = new OpenAIApi(configuration);
 
@@ -135,7 +135,7 @@ app.get('/ask', async (req, res) => {
 
 
 //         const configuration = new Configuration({
-//             apiKey: APIKEY,
+//             apiKey: config.APIKEY,
 //         });
 //         const openai = new OpenAIApi(configuration);
 
@@ -160,7 +160,7 @@ app.get('/ask-one', async (req, res) => {
     // input = "hi, what is your favorite color?"
     try {
         const configuration = new Configuration({
-            apiKey: APIKEY,
+            apiKey: config.APIKEY,
         });
         const openai = new OpenAIApi(configuration);
         const input = req.query.input;
@@ -181,7 +181,7 @@ app.get('/ask-one', async (req, res) => {
         //     method: 'GET',
         //     url: 'https://api.openai.com/v1/chat/completions',
         //     headers: {
-        //         'Authorization': 'Bearer ' + APIKEY,
+        //         'Authorization': 'Bearer ' + config.APIKEY,
         //         'Content-Type': 'application/json'
         //     },
         //     data: '{' +
@@ -235,7 +235,7 @@ app.get('/ask-one', async (req, res) => {
 //             method: 'POST',
 //             url: 'https://api.openai.com/v1/chat/completions',
 //             headers: {
-//                 'Authorization': 'Bearer ' + APIKEY,
+//                 'Authorization': 'Bearer ' + config.APIKEY,
 //                 'Content-Type': 'application/json'
 //             },
 //             data: '{' +
@@ -274,7 +274,7 @@ app.get('/ask-one', async (req, res) => {
 //             method: 'POST',
 //             url: 'https://api.openai.com/v1/chat/completions',
 //             headers: {
-//                 'Authorization': 'Bearer ' + APIKEY,
+//                 'Authorization': 'Bearer ' + config.APIKEY,
 //                 'Content-Type': 'application/json'
 //             },
 //             data: JSON.stringify({

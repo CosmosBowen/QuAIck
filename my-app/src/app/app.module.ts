@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChatComponent } from './chat/chat.component';
 import { GameComponent } from './game/game.component';
 import { BigAnswerComponent } from './big-answer/big-answer.component';
+import { AskAnythingComponent } from './ask-anything/ask-anything.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BigAnswerComponent } from './big-answer/big-answer.component';
     PlayingComponent,
     ChatComponent,
     GameComponent,
-    BigAnswerComponent
+    BigAnswerComponent,
+    AskAnythingComponent
   ],
   imports: [
     BrowserModule,
