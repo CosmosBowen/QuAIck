@@ -60,7 +60,7 @@ img {
     margin-bottom: 70px;
 }
 
-#btn_next {
+button {
     background-position-x: center;
     background-position-y: -0.5px;
     background-repeat: no-repeat;

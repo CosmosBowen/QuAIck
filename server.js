@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const { Configuration, OpenAIApi } = require("openai");
+//API = "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"
 
 const config = require("./config");
 
@@ -154,7 +155,7 @@ app.get('/ask', async (req, res) => {
 
 // })
 
-app.get('/ask-one', async (req, res) => {
+app.get('/askOne', async (req, res) => {
 
     tell_kids = "Imagine you are communicating with an elementary school kid from an authorative perspective. If asked, let them know you are AI. Make the child feel very comfortable, and add humor to make the conversation exciting, have fun! In less than 4 sentences. In 10 words including onomatopoeia.";
     // input = "hi, what is your favorite color?"
@@ -171,8 +172,9 @@ app.get('/ask-one', async (req, res) => {
             model: "gpt-3.5-turbo",
             messages: [{ role: "user", content: input }],
         });
-        const response = completion.data.choices[0].message.content
+        const response = completion.data.choices[0].message.content;
         console.log("here are the outputs:", response);
+        // response = "I love food, and I believe you love too! I'm a foodie AI!";
         res.json(response)
 
 

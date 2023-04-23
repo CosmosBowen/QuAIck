@@ -7,13 +7,14 @@
         <div class="col-md-6">
             <div id="output">
                 <p *ngIf="!to_query">{{output}}</p>
-                <input type="input" *ngIf="to_query" #query>
+                <div *ngIf="to_query">
+                    <input type="text" #ask>
+                    <button (click)="ask_anything(ask.value)" id="btn_ask"></button>
+                </div>
             </div>
         </div>
     </div>
-    <div>
-        <button *ngIf="to_query" (click)="ask_anything(query.value)" id="btn_ask"></button>
-    </div>
 
-    <button (click)="next()" id="btn_next"></button>
+    <button *ngIf="!to_query" (click)="next()"></button>
+    <!-- <button (click)="compare()">Interesting!</button> -->
 </div>

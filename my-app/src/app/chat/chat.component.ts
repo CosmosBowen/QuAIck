@@ -22,6 +22,7 @@ export class ChatComponent {
     this.ask = this.ask + this.selectedOption
     this.searchService.giveResponse(this.ask).subscribe(
       response => {
+        // response = "I love food, and I believe you love too! I'm a foodie AI!";
         console.log("output: " + response)
         // this.output = response;
         this.router.navigate(['/big-answer'], { queryParams: { output: response } });

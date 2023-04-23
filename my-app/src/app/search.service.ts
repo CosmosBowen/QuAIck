@@ -14,7 +14,7 @@ export class SearchService {
 
   giveResponse(query: any): Observable<any> {
     console.log("service query:", query)
-    const route = "ask-one";
+    const route = "askOne";
 
     return this.httpClient.get<any>(`${this.baseUrl}/${route}?input=${query}`)
       .pipe(

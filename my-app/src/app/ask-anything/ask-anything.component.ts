@@ -10,21 +10,20 @@ import { Router } from '@angular/router';
 export class AskAnythingComponent {
   to_query = false;
   output = "This was great! Now how about you ask me anything!";
-  ask?: string;
+  ask: string = "";
 
   constructor(
     private searchService: SearchService,
     private router: Router) { }
 
   ask_anything(query: string): void {
-    console.log("this.selectedOption:", this.selectedOption);
-    this.ask = this.ask + this.selectedOption;
-    this.searchService.giveResponse(this.ask).subscribe(
+    this.to_query = false;
+    console.log("query:", query);
+    this.searchService.giveResponse(query).subscribe(
       response => {
         console.log("output: " + response)
         // this.output = response;
         this.router.navigate(['/big-answer'], { queryParams: { output: response } });
-
 
       }
     );
@@ -33,5 +32,9 @@ export class AskAnythingComponent {
   next(): void {
     this.output = ""
     this.to_query = true;
+  }
+
+  compare(): void {
+    this.router.navigate(['/homepage']);
   }
 }
