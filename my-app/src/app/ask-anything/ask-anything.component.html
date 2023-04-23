@@ -6,8 +6,14 @@
         <!-- <div class="col-md-6">Hi, I'm a duck</div> -->
         <div class="col-md-6">
             <div id="output">
-                <p>{{output}}</p>
+                <p *ngIf="!to_query">{{output}}</p>
+                <input type="input" *ngIf="to_query" #query>
             </div>
         </div>
     </div>
+    <div>
+        <button *ngIf="to_query" (click)="ask_anything(query.value)" id="btn_ask"></button>
+    </div>
+
+    <button (click)="next()" id="btn_next"></button>
 </div>

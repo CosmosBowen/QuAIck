@@ -59,3 +59,25 @@ img {
     padding-left: 30px;
     margin-bottom: 70px;
 }
+
+#btn_next {
+    background-position-x: center;
+    background-position-y: -0.5px;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 160px;
+    zoom: 0.6;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 40px;
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-image: url('../ai/btn_start.png');
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+}
