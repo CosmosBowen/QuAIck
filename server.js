@@ -4,9 +4,7 @@ const { Configuration, OpenAIApi } = require('openai');
 const app = express();
 const bodyParser = require('body-parser');
 
-const APIKEY = "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";
-
-//var input = "pretend you are a kid. Do not say that you are an AI. Where were you born? ."
+const APIKEY = require('config.json').APIKEY;
 
 app.use(cors({
     origin: 'http://localhost:5173'
