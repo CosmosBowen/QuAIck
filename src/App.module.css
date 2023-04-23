@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "WinkleFont";
+  src: "./Winkle-Regular.ttf";
+}
+
+.root {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-family: "WinkleFont";
+  font-size: larger;
+  background-color: #26beff;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
