@@ -1,0 +1,18 @@
+.start {
+    background-color: rgb(212, 20, 20);
+}
+
+#input {
+    width: 500px;
+    height: 200px;
+}
+
+.box {
+    font-size: large;
+    color: rgb(0, 0, 0);
+    background-color: aquamarine;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+}

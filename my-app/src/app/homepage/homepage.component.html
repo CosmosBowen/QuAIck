@@ -1,0 +1,10 @@
+<input type="text" id="input" #myInput>
+<button type="button" id="button" (click)="submit(myInput.value)">submit</button>
+<!-- <p id="output">response from AI: {{output}}</p> -->
+
+<div *ngFor="let output of outputs">
+    <div class="box">
+        {{ output }}
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div id="bg">
+    <div id="screen">
+        <div id="container">
+            <div [hidden]="showContent">
+                <p>AI 4 Kids</p>
+                <button (click)="btn_start_click()" id="btn_start"></button>
+            </div>
+            <div *ngIf="showContent" class="center_block">
+                <p>grade level</p>
+                <mat-form-field appearance="fill">
+                    <select matNativeControl required class="btn_select" (click)="btn_select_click($event)">
+                        <option value="grade1">1st Grade</option>
+                        <option value="grade2">2nd Grade</option>
+                        <option value="grade3">3rd Grade</option>
+                        <option value="grade4">4th Grade</option>
+                        <option value="grade5">5th Grade</option>
+                    </select>
+                </mat-form-field>
+
+                <!-- <mat-form-field appearance="fill">
+                <select [formControl]="selectedOption" required class="btn_select" (click)="btn_select_click($event)">
+                    <option *ngfor="let option in options" [value]="option.value">{{ option.label }}</option>
+                </select>
+            </mat-form-field> -->
+
+                <!-- <mat-form-field appearance="fill">
+                <mat-select [formControl]="selectedGrade" class="btn_select" (click)="btn_select_click($event)">
+                    <mat-option value="grade1">1st Grade</mat-option>
+                    <mat-option value="grade2">2nd Grade</mat-option>
+                    <mat-option value="grade3">3rd Grade</mat-option>
+                    <mat-option value="grade4">4th Grade</mat-option>
+                    <mat-option value="grade5">5th Grade</mat-option>
+                </mat-select>
+            </mat-form-field> -->
+            </div>
+
+        </div>
+
+    </div>
+</div>

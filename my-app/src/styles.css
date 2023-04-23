@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('./assets/Winkle-Regular.ttf');
+}
+
+/* body {
+    
+} */
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Winkle';
+}
