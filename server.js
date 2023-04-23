@@ -4,7 +4,7 @@ const { Configuration, OpenAIApi } = require('openai');
 const app = express();
 const bodyParser = require('body-parser');
 
-const APIKEY = require('config.json').APIKEY;
+const APIKEY = require('./config.json').APIKEY;
 
 app.use(cors({
     origin: 'http://localhost:5173'
